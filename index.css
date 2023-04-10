@@ -1,0 +1,43 @@
+:root {
+    --cool-grey: #141f1f;
+    --cool-green: #669999;
+    --cool-blue: #7070ff;
+    --cool-magenta: #cc0052;
+    --cool-orange: #ff8820;
+    --light-magenta: rgba(255, 51, 51, 0.5);
+    --box-background: ;
+    --box-border: ;
+    --box-color: ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+body {
+    background-color: #669999;
+    display: block;
+}
+
+container {
+    background-color: #7070ff;
+    display: block;
+    width: 100%;
+}
+
+aside {
+    background-color: #cc0052;
+    display: block;
+    position: sticky;
+    width: 500px;
+    height: 100%;
+}
+
+main {
+    background-color: #ff8820;
+
+}
