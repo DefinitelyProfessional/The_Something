@@ -1,8 +1,12 @@
 :root {
-    --bg-aside: #83250d;
-    --sh-aside: #db523a;
-}
+    /* Defined Colors */
+    --opq-red: rgba(255, 51, 51, 0.8);
 
+    /* Element Variables */
+    --bg-aside: #000000;
+    --bd-aside: #9c2010;
+    --sh-aside: #d3513a;
+}
 * {
     margin: 0;
     padding: 0;
@@ -14,14 +18,18 @@
 body {
     display: flex;
     width: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
 }
+
 
 div {
     display: flex;
+    flex-direction: column;
 }
 
 button {
-    background: none;
+    background-color: transparent;
     border: none;
     margin: 0;
     padding: 0;
@@ -38,20 +46,38 @@ a {
 
 /*-_-_-_-_-_-_-_-_-_-_ NAV BAR SECTION  -_-_-_-_-_-_-_-_-_-_*/
 aside {
-    display: block;
-    flex: 0 0 20vw;
+    flex: 0 0 350px;
     position: sticky;
     top: 0;
     height: 100%;
-    overflow-y: auto;
+    padding: 32px;
+    overflow-y: scroll;
     background-color: var(--bg-aside);
+    border-right: 2px ridge var(--bd-aside);
     box-shadow: 4px 0 8px 0 var(--sh-aside);
 }
 
-#tab-BUTTONS {
-    flex-flow: column;
+/*. . . . . . . . . . HEADER */
+header {
+    font-family: 'Major Mono Display', monospace;
+    margin-bottom: 16px;
 }
+#HEADING {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+#HEADING img {
+    width: 30px;
+    height: 30px;
+}
+/*. . . . . . . . . . BUTTONS */
+#tab-BUTTONS {
+    flex-direction: column;
+}
+
 /*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
 .tab-content {
-    flex-flow: column;
+    display: block;
+    background-color: #d3513a;
 }
