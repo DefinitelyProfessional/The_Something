@@ -6,13 +6,17 @@
     --bg-aside: #000000;
     --bd-aside: #9c2010;
     --sh-aside: #d3513a;
+    --sb-track: #ffffff;
+    --sb-scrollbar: #ff4800;
+    --sb-thumb: #fff;
 }
+
 * {
     margin: 0;
     padding: 0;
     color: #ffffff;
     box-sizing: border-box;
-    word-break: break-word;
+    text-align: justify;
 }
 
 body {
@@ -45,35 +49,51 @@ a {
 }
 
 /*-_-_-_-_-_-_-_-_-_-_ NAV BAR SECTION  -_-_-_-_-_-_-_-_-_-_*/
-aside {
+#NAVBAR {
     flex: 0 0 350px;
     position: sticky;
     top: 0;
-    height: 100%;
-    padding: 32px;
-    overflow-y: scroll;
+    padding: 64px 28px;
+    overflow-y: auto;
     background-color: var(--bg-aside);
     border-right: 2px ridge var(--bd-aside);
     box-shadow: 4px 0 8px 0 var(--sh-aside);
 }
 
+/*. . . . . . . . . . SIMPLEBAR */
+.simplebar-track {
+    background-color: var(--sb-track);
+    border-radius: 10px;
+    width: 8px !important;
+}
+.simplebar-scrollbar {
+    background-color: var(--sb-scrollbar);
+    border-radius: 10px;
+}
+.simplebar-thumb.simplebar-visible {
+    background-color: var(--sb-thumb);
+}
 /*. . . . . . . . . . HEADER */
 header {
+    display: block;
     font-family: 'Major Mono Display', monospace;
     margin-bottom: 16px;
 }
-#HEADING {
-    justify-content: space-between;
+
+.title {
     flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 8px;
 }
-#HEADING img {
+
+.title img {
     width: 30px;
     height: 30px;
 }
-/*. . . . . . . . . . BUTTONS */
-#tab-BUTTONS {
-    flex-direction: column;
+
+.subtitle {
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 /*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
