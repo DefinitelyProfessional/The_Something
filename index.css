@@ -3,11 +3,12 @@
     --opq-red: rgba(255, 51, 51, 0.8);
 
     /* Element Variables */
-    --bg-aside: #000000;
-    --bd-aside: #9c2010;
-    --sh-aside: #d3513a;
-    --sb-track: #ffffff;
-    --sb-scrollbar: #ff4800;
+    --bg-navbar: #000000;/* bg : background  */
+    --bd-navbar: #9c2010;/* bd : border      */
+    --sh-navbar: #d3513a;/* sh : box-shadow  */
+    --cl-navbar: #ffffff;/* cl : color       */
+    --sb-track: #404040;/* sb : simplebar   */
+    --sb-scrollbar: #555555;
     --sb-thumb: #fff;
 }
 
@@ -48,35 +49,41 @@ a {
     text-decoration: none;
 }
 
-/*-_-_-_-_-_-_-_-_-_-_ NAV BAR SECTION  -_-_-_-_-_-_-_-_-_-_*/
-#NAVBAR {
-    flex: 0 0 350px;
-    position: sticky;
-    top: 0;
-    padding: 64px 28px;
-    overflow-y: auto;
-    background-color: var(--bg-aside);
-    border-right: 2px ridge var(--bd-aside);
-    box-shadow: 4px 0 8px 0 var(--sh-aside);
-}
-
-/*. . . . . . . . . . SIMPLEBAR */
+/*-_-_-_-_-_-_-_-_-_-_ SIMPLEBAR -_-_-_-_-_-_-_-_-_-_*/
 .simplebar-track {
     background-color: var(--sb-track);
     border-radius: 10px;
     width: 8px !important;
 }
+
 .simplebar-scrollbar {
     background-color: var(--sb-scrollbar);
     border-radius: 10px;
 }
-.simplebar-thumb.simplebar-visible {
+
+.simplebar-track .simplebar-thumb {
     background-color: var(--sb-thumb);
+    color: #d3513a;
 }
+
+/*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
+#NAVBAR {
+    flex: 0 0 350px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    padding: 64px 28px;
+    overflow-y: auto;
+    background-color: var(--bg-navbar);
+    border-right: 2px ridge var(--bd-navbar);
+    box-shadow: 4px 0 8px 0 var(--sh-navbar);
+}
+
 /*. . . . . . . . . . HEADER */
 header {
-    display: block;
     font-family: 'Major Mono Display', monospace;
+    border-bottom: 4px double var(--cl-navbar);
+    padding-bottom: 8px;
     margin-bottom: 16px;
 }
 
@@ -95,9 +102,29 @@ header {
     flex-direction: row;
     justify-content: space-between;
 }
+/*. . . . . . . . . . tab-BUTTONS */
 
+/*. . . . . . . . . . FOOTER */
+footer a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 8px;
+    transition: .5s;
+    padding: 4px 8px;
+}
+footer a:hover {
+    background-color: red;
+    /* box-shadow: ; */
+    scale: 1.05;
+}
+.fa-brands {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
 /*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
 .tab-content {
     display: block;
-    background-color: #d3513a;
+    overflow-y: auto;
+    background-color: #630000;
 }
