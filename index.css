@@ -20,11 +20,10 @@
 }
 body {
     display: flex;
-    width: 100%;
     font-family: 'PT Sans', sans-serif;
     font-size: 20px;
 }
-div {
+header, div {
     display: flex;
     flex-direction: column;
 }
@@ -43,6 +42,7 @@ a {
     text-decoration: none;
 }
 
+
 /*-_-_-_-_-_-_-_-_-_-_ SIMPLEBAR -_-_-_-_-_-_-_-_-_-_*/
 .simplebar-track {
     background-color: var(--sb-track);
@@ -57,6 +57,7 @@ a {
     background-color: var(--sb-thumb);
     color: #d3513a;
 }
+
 
 /*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
 #NAVBAR {
@@ -74,12 +75,28 @@ a {
     border-right: 2px ridge var(--bd-navbar);
     box-shadow: 4px 0 8px 0 var(--sh-navbar);
 }
-
+h3.title {
+    text-align: center;
+    padding-bottom: 4px;
+    margin: 32px 0px 8px 0px;
+    border-bottom: 2px ridge var(--cl-navbar);
+}
+h3.title.fa-solid {
+    margin: 0px 16px;
+}
+.fa-solid {
+    margin-right: 8px;
+}
+.fa-brands {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
 /*. . . . . . . . . . HEADER */
-header {
+.heading {
     font-family: 'Major Mono Display', monospace;
     border-bottom: 4px double var(--cl-navbar);
     padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 .title {
     flex-direction: row;
@@ -110,16 +127,13 @@ header {
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
-.fa-solid {
-    margin-right: 8px;
+.tab.active {
+    background-color: #cc0052;
+    box-shadow: 45px 0px 40px #ff8820 inset;
+    text-shadow: 2px 2px 4px #303030;
+    scale: 1.05;
 }
 /*. . . . . . . . . . FOOTER */
-footer h3 {
-    text-align: center;
-    padding-bottom: 4px;
-    margin-bottom: 8px;
-    border-bottom: 2px ridge var(--cl-navbar);
-}
 footer a:hover {
     color: #fff;
     background-color: #405DE6;
@@ -127,13 +141,12 @@ footer a:hover {
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
-.fa-brands {
-    font-size: 1.5em;
-    margin-right: 8px;
-}
+
+
 /*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
 .tab-content {
     display: block;
     overflow-y: auto;
-    background-color: #630000;
+    padding: 5em 3em;
+    background-color: #ffffff;
 }
