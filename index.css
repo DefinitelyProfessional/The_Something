@@ -11,28 +11,23 @@
     --sb-scrollbar: #555555;
     --sb-thumb: #fff;
 }
-
 * {
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    color: inherit;
     box-sizing: border-box;
     text-align: justify;
 }
-
 body {
     display: flex;
     width: 100%;
     font-family: 'PT Sans', sans-serif;
     font-size: 20px;
 }
-
-
 div {
     display: flex;
     flex-direction: column;
 }
-
 button {
     background-color: transparent;
     border: none;
@@ -43,7 +38,6 @@ button {
     font-size: inherit;
     text-align: inherit;
 }
-
 a {
     display: block;
     text-decoration: none;
@@ -55,12 +49,10 @@ a {
     border-radius: 10px;
     width: 8px !important;
 }
-
 .simplebar-scrollbar {
     background-color: var(--sb-scrollbar);
     border-radius: 10px;
 }
-
 .simplebar-track .simplebar-thumb {
     background-color: var(--sb-thumb);
     color: #d3513a;
@@ -68,12 +60,16 @@ a {
 
 /*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
 #NAVBAR {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 0 0 350px;
     position: sticky;
     z-index: 1;
     top: 0;
     padding: 64px 28px;
     overflow-y: auto;
+    color: var(--cl-navbar);
     background-color: var(--bg-navbar);
     border-right: 2px ridge var(--bd-navbar);
     box-shadow: 4px 0 8px 0 var(--sh-navbar);
@@ -84,28 +80,22 @@ header {
     font-family: 'Major Mono Display', monospace;
     border-bottom: 4px double var(--cl-navbar);
     padding-bottom: 8px;
-    margin-bottom: 16px;
 }
-
 .title {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 8px;
 }
-
 .title img {
     width: 30px;
     height: 30px;
 }
-
 .subtitle {
     flex-direction: row;
     justify-content: space-between;
 }
-/*. . . . . . . . . . tab-BUTTONS */
-
-/*. . . . . . . . . . FOOTER */
-footer a {
+/*. . . . . . . . . . BUTTONS */
+.tab, footer a{
     display: flex;
     position: relative;
     align-items: center;
@@ -113,9 +103,28 @@ footer a {
     transition: .5s;
     padding: 4px 8px;
 }
+.tab:hover {
+    color: #fff;
+    background-color: #7070ff;
+    box-shadow: 45px 0px 40px #669999 inset;
+    text-shadow: 2px 2px 4px #303030;
+    scale: 1.05;
+}
+.fa-solid {
+    margin-right: 8px;
+}
+/*. . . . . . . . . . FOOTER */
+footer h3 {
+    text-align: center;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    border-bottom: 2px ridge var(--cl-navbar);
+}
 footer a:hover {
-    background-color: red;
-    /* box-shadow: ; */
+    color: #fff;
+    background-color: #405DE6;
+    box-shadow: 45px 0px 40px #833AB4 inset;
+    text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
 .fa-brands {
