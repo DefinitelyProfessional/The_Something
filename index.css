@@ -81,7 +81,7 @@ h3.title {
     margin: 32px 0px 8px 0px;
     border-bottom: 2px ridge var(--cl-navbar);
 }
-h3.title.fa-solid {
+h3.title .fa-solid {
     margin: 0px 16px;
 }
 .fa-solid {
