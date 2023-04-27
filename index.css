@@ -74,6 +74,7 @@ a {
     background-color: var(--bg-navbar);
     border-right: 2px ridge var(--bd-navbar);
     box-shadow: 4px 0 8px 0 var(--sh-navbar);
+    transition: .2s ease;
 }
 h3.title {
     text-align: center;
@@ -117,7 +118,7 @@ h3.title .fa-solid {
     position: relative;
     align-items: center;
     border-radius: 8px;
-    transition: .5s;
+    transition: .5s ease-out;
     padding: 4px 8px;
 }
 .tab:hover {
@@ -145,8 +146,11 @@ footer a:hover {
 
 /*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
 .tab-content {
-    display: block;
+    display: none;
+    flex: 1 0 auto;
     overflow-y: auto;
     padding: 5em 3em;
-    background-color: #ffffff;
+}
+.tab-content.active {
+    display: block;
 }
