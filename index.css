@@ -151,6 +151,6 @@ footer a:hover {
     overflow-y: auto;
     padding: 5em 3em;
 }
-.tab-content.active {
-    display: block;
+#ARRIVAL {
+    text-indent: 2em;
 }
