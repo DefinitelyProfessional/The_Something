@@ -1,8 +1,9 @@
 // make element variables
-let NAVBAR, tabButton, tabContent;
+let NAVBAR, CONTENT, tabButton, tabContent;
 document.addEventListener('DOMContentLoaded', () => {
     // Define element variables after everything is loaded
     NAVBAR = document.getElementById('NAVBAR');
+    CONTENT = document.getElementById('CONTENT');
     tabButton = document.getElementsByClassName('tab');
     tabContent = document.getElementsByClassName('tab-content');
 
@@ -13,10 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make the Arrival tab as initial tab with switchTab
     tabButton[0].click()
     // Controls the NAVBAR's height
-    NAVBAR.style.height = `${window.innerHeight}px`;
     window.addEventListener('resize', () => {
         NAVBAR.style.height = `${window.innerHeight}px`;
     });
+    // trigger the resize event so the code inside the EventListener above is executed
+    window.dispatchEvent(new Event('resize'));
 });
 
 // a function for NAVBAR's tab switching buttons. NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
