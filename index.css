@@ -149,11 +149,14 @@ footer a:hover {
     display: none;
     height: 100%;
     color: #fff;
-    padding: 8em 10%;
+    padding: 8em 0;
+}
+.tab-content p {
+    padding: 0 10%;
 }
 /*. . . . . . . . . . ARRIVAL PAGE */
 #ARRIVAL {
-    background: #fff url('./Assets/Images/welcomeguy1.png') center/100% no-repeat fixed;
+    background: #fff url('./Assets/Images/welcome.png') center/100% no-repeat fixed;
 }
 #ARRIVAL p {
     text-indent: 2em;
