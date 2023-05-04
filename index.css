@@ -41,8 +41,9 @@ a {
     display: block;
     text-decoration: none;
 }
-
-
+main {
+    width: 100%;
+}
 /*-_-_-_-_-_-_-_-_-_-_ SIMPLEBAR -_-_-_-_-_-_-_-_-_-_*/
 .simplebar-track {
     background-color: var(--sb-track);
@@ -74,15 +75,14 @@ a {
     background-color: #000;
     border-right: 2px ridge #9c2010;
     box-shadow: 4px 0 8px 0 #d3513a;
-    transition: .2s ease;
 }
-h3.title {
+.topic {
     text-align: center;
     padding-bottom: 4px;
     margin: 32px 0px 8px 0px;
     border-bottom: 2px ridge #fff;
 }
-h3.title .fa-solid {
+.topic .fa-solid {
     margin: 0px 16px;
 }
 .fa-solid {
@@ -93,24 +93,22 @@ h3.title .fa-solid {
     margin-right: 8px;
 }
 /*. . . . . . . . . . HEADER */
-.heading {
+header div {
     font-family: 'Major Mono Display', monospace;
-    border-bottom: 4px double var(--cl-navbar);
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-}
-.title {
     flex-direction: row;
     justify-content: space-between;
+}
+.heading {
     margin-bottom: 8px;
 }
-.title img {
+.heading img {
     width: 30px;
     height: 30px;
 }
-.subtitle {
-    flex-direction: row;
-    justify-content: space-between;
+.subheading {
+    border-bottom: 4px double var(--cl-navbar);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
 }
 /*. . . . . . . . . . BUTTONS */
 .tab, footer a{
@@ -124,7 +122,7 @@ h3.title .fa-solid {
 .tab:hover {
     color: #fff;
     background-color: #7070ff;
-    box-shadow: 45px 0px 40px #669999 inset;
+    box-shadow: 45px 0px 40px #70adad inset;
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
@@ -153,6 +151,20 @@ footer a:hover {
 }
 .tab-content p {
     padding: 0 10%;
+}
+.title {
+    display: inline-block;
+    position: relative;
+    transform: skewX(-30deg);
+    left: -5%;
+    background-color: #cc1f00;
+    border-right: 32px double #ff8820;
+    border-bottom: 4px solid #ff8820;
+    margin-bottom: 16px;
+}
+.title h1 {
+    transform: skewX(30deg);
+    margin: 8px 64px 8px 200px;
 }
 /*. . . . . . . . . . ARRIVAL PAGE */
 #ARRIVAL {
