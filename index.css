@@ -1,15 +1,6 @@
 :root {
     /* Defined Colors */
     --opq-red: rgba(255, 51, 51, 0.8);
-
-    /* Element Variables */
-    --bg-navbar: #000000;/* bg : background  */
-    --bd-navbar: #9c2010;/* bd : border      */
-    --sh-navbar: #d3513a;/* sh : box-shadow  */
-    --cl-navbar: #ffffff;/* cl : color       */
-    --sb-track: #404040;/* sb : simplebar   */
-    --sb-scrollbar: #555555;
-    --sb-thumb: #fff;
 }
 * {
     margin: 0;
@@ -44,21 +35,6 @@ a {
 main {
     width: 100%;
 }
-/*-_-_-_-_-_-_-_-_-_-_ SIMPLEBAR -_-_-_-_-_-_-_-_-_-_*/
-.simplebar-track {
-    background-color: var(--sb-track);
-    border-radius: 10px;
-    width: 8px !important;
-}
-.simplebar-scrollbar {
-    background-color: var(--sb-scrollbar);
-    border-radius: 10px;
-}
-.simplebar-track .simplebar-thumb {
-    background-color: var(--sb-thumb);
-    color: #d3513a;
-}
-
 
 /*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
 #NAVBAR {
@@ -73,7 +49,7 @@ main {
     overflow-y: auto;
     color: #fff;
     background-color: #000;
-    border-right: 2px ridge #9c2010;
+    border-right: 4px double #9c2010;
     box-shadow: 4px 0 8px 0 #d3513a;
 }
 .topic {
@@ -149,27 +125,41 @@ footer a:hover {
     color: #fff;
     padding: 8em 0;
 }
-.tab-content p {
-    padding: 0 10%;
-}
 .title {
     display: inline-block;
     position: relative;
-    transform: skewX(-30deg);
-    left: -5%;
-    background-color: #cc1f00;
+    transform: skewX(-40deg);
+    left: -6%;
+    background-color: #cc0033;
+    box-shadow: 100px 0px 40px #ff8820 inset;
     border-right: 32px double #ff8820;
     border-bottom: 4px solid #ff8820;
     margin-bottom: 16px;
 }
 .title h1 {
-    transform: skewX(30deg);
-    margin: 8px 64px 8px 200px;
+    transform: skewX(40deg);
+    margin: 8px 64px 8px 250px;
 }
 /*. . . . . . . . . . ARRIVAL PAGE */
 #ARRIVAL {
-    background: #fff url('./Assets/Images/welcome.png') center/100% no-repeat fixed;
+    background: #fff url('./Assets/Images/welcome.png') no-repeat fixed center center / cover;
 }
-#ARRIVAL p {
+.paragraph {
+    margin: 0 4%;
+    padding: 1em;
     text-indent: 2em;
+    border-radius: 8px;
+    border: 2px double #fff;
+    background-color: rgba(0, 0 ,0 ,0.2);
+}
+#CREDITS, #CIPHER {
+    padding: 0;
+}
+#CREDITS div, #CIPHER div {
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
