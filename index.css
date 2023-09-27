@@ -40,17 +40,18 @@ main {
 #NAVBAR {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 350px;
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    padding: 64px 28px;
-    overflow-y: auto;
+    justify-content: stretch;
     color: #fff;
     background-color: #000;
     border-right: 4px double #9c2010;
     box-shadow: 4px 0 8px 0 #d3513a;
+    position: sticky;
+    overflow-y: auto;
+    flex: 0 0 350px;
+    z-index: 1;
+    top: 0;
+    padding: 64px 28px;
+
 }
 .topic {
     text-align: center;
@@ -61,7 +62,7 @@ main {
 .topic .fa-solid {
     margin: 0px 16px;
 }
-.fa-solid {
+.fa-solid, .fa-regular {
     margin-right: 8px;
 }
 .fa-brands {
@@ -82,12 +83,16 @@ header div {
     height: 30px;
 }
 .subheading {
-    border-bottom: 4px double var(--cl-navbar);
+    border-bottom: 4px double #fff;
     padding-bottom: 8px;
     margin-bottom: 16px;
 }
-/*. . . . . . . . . . BUTTONS */
-.tab, footer a{
+/*. . . . . . . . . . CONTENTS */
+#CONTENTS {
+    height: 100%;
+    justify-content: space-between;
+}
+.tab, .project_tab, footer a{
     display: flex;
     position: relative;
     align-items: center;
@@ -95,14 +100,14 @@ header div {
     transition: .3s ease-out;
     padding: 4px 8px;
 }
-.tab:hover {
+.tab:hover, .project_tab:hover {
     color: #fff;
     background-color: #7070ff;
     box-shadow: 45px 0px 40px #70adad inset;
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
-.tab.active {
+.tab.active, .project_tab.active {
     background-color: #cc0052;
     box-shadow: 45px 0px 40px #ff8820 inset;
     text-shadow: 2px 2px 4px #303030;
@@ -152,10 +157,12 @@ footer a:hover {
     border: 2px double #fff;
     background-color: rgba(0, 0 ,0 ,0.2);
 }
-#CREDITS, #CIPHER {
+
+/* work in progress */
+#MINESWEEPER, #CREDITS, #CIPHER {
     padding: 0;
 }
-#CREDITS div, #CIPHER div {
+#MINESWEEPER div, #CREDITS div, #CIPHER div {
     background-color: #303030;
     display: flex;
     justify-content: center;
