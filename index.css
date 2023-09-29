@@ -40,7 +40,6 @@ main {
 #NAVBAR {
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
     color: #fff;
     background-color: #000;
     border-right: 4px double #9c2010;
@@ -79,13 +78,19 @@ header div {
     margin-bottom: 8px;
 }
 .heading img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 .subheading {
     border-bottom: 4px double #fff;
     padding-bottom: 8px;
     margin-bottom: 16px;
+}
+#MENU {
+    display: none;
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    background-color: #cc0033;
 }
 /*. . . . . . . . . . CONTENTS */
 #CONTENTS {
@@ -167,6 +172,35 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+}
+
+/* MOBILE PHONE MODE */
+@media screen and (orientation: portrait) {
+    body {
+        flex-direction: column;
+    }
+
+    #NAVBAR {
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 0 0 100%;
+        font-size: 2em;
+        padding: 32px;
+        border-right: none;
+        border-bottom: 4px double #9c2010;
+    }
+    #MENU {
+        display: flex;
+    }
+    .heading img {
+        width: 55px;
+        height: 55px;
+    }
+    .subheading {
+        margin-bottom: 0;
+    }
+
+    #CONTENTS {
+        display: none;
+    }
 }

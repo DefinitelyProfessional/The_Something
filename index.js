@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < tabButton.length; i++) {
         tabButton[i].addEventListener('click', () => { switchTab(tabButton[i], tabContent[i]) });
     }
+
     // Make the Arrival tab as initial tab with switchTab
     tabButton[0].click()
+
     // Controls the NAVBAR's height
     window.addEventListener('resize', () => {
-        NAVBAR.style.height = `${window.innerHeight}px`;
+            NAVBAR.style.height = `${window.innerHeight}px`;
     });
+
     // trigger the resize event so the code inside the EventListener above is executed
     window.dispatchEvent(new Event('resize'));
 });
