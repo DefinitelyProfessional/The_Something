@@ -1,0 +1,176 @@
+:root {
+    /* Colors of elements */
+    --NAVBAR-texts: #e3e9e1;
+    --NAVBAR-bgcolor: #0f0f0f;
+    --text-shadows: #303030;
+    --tab-hover-background: #7070ff;
+    --tab-hover-gradient: #70adad;
+    --active-background: #88c070;
+    --active-gradient: #7bb7a5;
+    --footer-hover-background: #405DE6;
+    --footer-hover-gradient: #833AB4;
+    --tab-content-texts: #fff;
+    --paragraph-transparent-bg: rgba(0, 0 ,0 ,0.6);
+}
+
+/*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
+#NAVBAR {
+    display: flex;
+    flex-direction: column;
+    color: var(--NAVBAR-texts);
+    background-color: var(--NAVBAR-bgcolor);
+    position: sticky;
+    overflow-y: auto;
+    flex: 0 0 300px;
+    z-index: 1;
+    top: 0;
+    padding: 64px 28px;
+}
+.topic {
+    text-align: center;
+    padding-bottom: 4px;
+    margin: 32px 0px 8px 0px;
+    border-bottom: 2px ridge var(--NAVBAR-texts);
+}
+/*. . . . . . . . . . HEADER */
+header div{
+    font-family: 'Oswald', sans-serif;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.heading {
+    text-align: center;
+    font-weight: 400;
+    font-size: 5rem;
+}
+.subheading {
+    border-bottom: 4px double var(--NAVBAR-texts);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+.subheading h5 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+#RIGBY {
+    border-radius: 100%;
+    align-self: center;
+    width: 150px;
+    height: 150px;
+}
+/*. . . . . . . . . . CONTENTS */
+#CONTENTS {
+    height: 100%;
+    justify-content: space-between;
+}
+.tab, footer a, #CONTENTS a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 8px;
+    transition: .3s ease-out;
+    padding: 4px 8px;
+}
+.tab:hover, #COOL:hover, #CONTENTS a:hover {
+    background-color: var(--tab-hover-background);
+    box-shadow: 45px 0px 40px var(--tab-hover-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
+    scale: 1.05;
+}
+.active {
+    background-color: var(--active-background);
+    box-shadow: 45px 0px 40px var(--active-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
+    scale: 1.05;
+}
+/*. . . . . . . . . . I LOVE THE VIEW */
+#COOL {
+    font-weight: 700;
+    border: .5rem ridge var(--NAVBAR-texts);
+    border-radius: 2rem;
+    transition: .5s ease-out;
+}
+/*. . . . . . . . . . FOOTER */
+footer a:hover {
+    background-color: var(--footer-hover-background);
+    box-shadow: 45px 0px 40px var(--footer-hover-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
+    scale: 1.05;
+}
+
+
+/*-_-_-_-_-_-_-_-_-_-_ MAIN CONTENT     -_-_-_-_-_-_-_-_-_-_*/
+.tab-content {
+    display: none;
+    height: 100%;
+    color: var(--tab-content-texts);
+    padding: 8em 0;
+}
+.title {
+    display: inline-block;
+    position: relative;
+    transform: skewX(-40deg);
+    left: -15rem;
+    background-color: var(--NAVBAR-bgcolor);
+    border-right: 32px double var(--active-background);
+    border-bottom: 4px solid var(--active-background);
+    margin-bottom: 16px;
+}
+.title h1 {
+    transform: skewX(40deg);
+    margin: 8px 64px 8px 250px;
+}
+.paragraph {
+    margin: 0 6%;
+    padding: 1em;
+    text-indent: 2em;
+    border-radius: 8px;
+    border: 2px double var(--tab-content-texts);
+    background-color: var(--paragraph-transparent-bg);
+    font-size: 2.5rem;
+}
+.paragraph p {
+    margin: 2rem 0;
+}
+/*. . . . . . . . . . ARRIVAL PAGE . . . . . . . . . .*/
+#ARRIVAL {
+    background: #fff url('../assets/pictures/nature-arrival.png') no-repeat fixed center center / cover;
+}
+/*. . . . . . . . . . CREDIT PAGE . . . . . . . . . .*/
+#CREDITS {
+    background: #fff url('../assets/pictures/nature-credits.png') no-repeat fixed center center / cover;
+}
+/* This is styling connected to asset-setups definitions */
+.topic .icon {
+    margin: 0px 8px;
+}
+.tab .icon, .icon-instagram, .icon-github {
+    margin-right: 8px;
+}
+
+/* MOBILE PHONE MODE */
+@media screen and (orientation: portrait) {
+    body {
+        flex-direction: column;
+    }
+
+    #NAVBAR {
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 0 0 100%;
+        font-size: 2em;
+        padding: 32px;
+        border-right: none;
+        border-bottom: 4px double #9c2010;
+    }
+    #MENU {
+        display: flex;
+    }
+    .subheading {
+        margin-bottom: 0;
+    }
+
+    #CONTENTS {
+        display: none;
+    }
+}

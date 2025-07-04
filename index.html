@@ -5,101 +5,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SomethingSQ</title>
-    <meta name="description" content="The Something Of SQ">
-    <meta name="keywords" content="website, github, StephenSQ, cv, SQ">
+    <meta name="description" content="The Something of SQ">
+    <meta name="keywords" content="something, somethingsq, stephensq, github-project, indie">
     <meta name="author" content="StephenSQ">
 
-    <link rel="icon" type="image/png" href="./Assets/Images/icon.png">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=PT+Sans&display=swap">
-    <script src="https://kit.fontawesome.com/2a11df392b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./stylesheets/setups.css">
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <script src="./javascripts/index.js"></script>
 </head>
 
 <body>
+    <div id="LANDING-SCREEN">
+        <h2>Greetings.</h2>
+        <p>&lt; click anywhere &gt;</p>
+    </div>
+
     <aside id="NAVBAR">
         <header>
             <div class="heading">
-                <img src="./Assets/Images/icon.png" class="pfp">
-                <h1>somethingSQ</h1>
+                SomethingSQ
             </div>
             <div class="subheading">
-                <h5>Where</h5>
-                <h5>something</h5>
-                <h5>is</h5>
-                <h5>made</h5>
+                <div>Where</div>
+                <div>Something</div>
+                <div>Is</div>
+                <div>Made</div>
             </div>
         </header>
-
-        <div id="MENU">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
 
         <div id="CONTENTS">
             <div>
                 <button class="tab">
-                    <h3><i class="fa-solid fa-house"></i>Arrival</h3>
+                    <h3><i class="icon icon-house"></i>Arrival</h3>
                 </button>
                 <button class="tab">
-                    <h3><i class="fa-solid fa-comments-dollar"></i>Credit</h3>
+                    <h3><i class="icon icon-credit"></i>Credit</h3>
                 </button>
             </div>
 
-            <div>
-                <h3 class="topic"><i class="fa-solid fa-gamepad"></i>Play<i class="fa-solid fa-gamepad"></i></h3>
+            <button class="topic" id="COOL">I love the view <i class="icon icon-camera"></i></button>
 
-                <button class="tab">
-                    <h3><i class="fa-solid fa-land-mine-on"></i>SweeperSQ</h3>
-                </button>
-                <button class="tab">
-                    <h3><i class="fa-solid fa-key"></i>CipherSQ</h3>
-                </button>
-                <a href="" class="project_tab"><h3><i class="fa-regular fa-square-full"></i>MatrixSQ</h3></a>
-            </div>
+            <a href="https://revou-fundamental-course.github.io/16-jun-25-StephenSQ/">
+                <h3><i class="icon-right icon icon-triangle"></i>TriangleSQ</h3>
+            </a>
 
             <footer>
-                <h3 class="topic">&lt; ContactSQ &gt;</h3>
+                <h3 class="topic">&lt;<i class="icon icon-user"></i>ContactSQ<i class="icon icon-user"></i>&gt;</h3>
 
-                <a href="https://github.com/StephenSQ"><i class="fa-brands fa-github"></i>StephenSQ™</a>
-                <a href="https://www.instagram.com/sitrus_limau/"><i
-                        class="fa-brands fa-instagram"></i>@sitrus_limau</a>
+                <a href="https://github.com/StephenSQ"><i class="icon icon-github"></i>StephenSQ™</a>
+                <a href="https://www.instagram.com/sitrus_limau/"><i class="icon icon-instagram"></i>@sitrus_limau</a>
             </footer>
         </div>
     </aside>
 
     <main>
+        <!-- - - - - - - - - ARRIVAL PAGE- - - - - - - - -->
         <div id="ARRIVAL" class="tab-content">
-            <div class="title">
-                <h1>Welcome to SomethingSQ</h1>
-            </div>
-            <div class="paragraph">
-                <p>Here lies a website I made to put all sorts of my projects, from random web dev projects to
-                    experimental mini-projects, and maybe someday it'll also have previews/showcase of other projects
-                    outside of web based projects or even unrelated to the topic of programming.</p>
-            </div>
+            <div class="contents">
+                <div class="title">
+                    <h1>Welcome to Something SQ</h1>
+                </div>
+                <div class="paragraph">
+                    <p>The personal website made entirely of vanilla HTML, CSS, and JS. Created by a student in their
+                        journey of mastering the art of programming, this website also happens to be open source and
+                        accessible for anyone to take a peek at the magnum opus of a code I wrote for this website. I
+                        think its pretty readable and understandable(?) Beuh, as if anyone has the guts to even read
+                        this mad man's code.</p>
 
+                    <p>This is made for fun. A place to experiment and make cool stuff from the ground up without the
+                        help of any framework type shyt. PURE VANILA FOREVER. However... This website is anything BUT
+                        professional. Expect compatibility issues with querky choices of browsers. Note this is made by
+                        a guy who only needs to use MSEDGE and CHROME, sorry to ya'll opera firefox and other browser
+                        users if there's gonna be a TON of weird behavior in this site.</p>
+
+                    <img id="RIGBY" src="./assets/pictures/rigbycat-rigby.gif" alt="rigby pic" title="RIGBY the cat, big fan.">
+
+                    <p>The design principle in this website is independent, fun, and cool. It shouldnt have much
+                        dependencies... every asset is hosted by the same github Pages this website is hosted. Images,
+                        SVGs, mp3, etc all in one goofy ahh /asset file. I hope this simple site can give some sort of
+                        entertainment or even education to anyone of ya'll fortunate souls who would read all the way
+                        here, God Bless gng.</p>
+                </div>
+            </div>
         </div>
+
+        <!-- - - - - - - - - CREDITS PAGE- - - - - - - - -->
         <div id="CREDITS" class="tab-content">
-            <div>
-                <h2>A work in progress... nothing to see here... yet.</h2>
-            </div>
-        </div>
-        <div id="MINESWEEPER" class="tab-content">
-            <div>
-                <h2>A work in progress... nothing to see here... yet.</h2>
-            </div>
-        </div>
-        <div id="CIPHER" class="tab-content">
-            <div>
-                <h2>A work in progress... nothing to see here... yet.</h2>
+            <div class="contents">
+                <div class="title">
+                    <h1>Check this out !</h1>
+                </div>
+
+                <div class="paragraph">
+                    <p>You hear that ? Thats the magnum opus of a Classical Music Masterpiece by the one and only
+                        Antonio Vivaldi, The Four Seasons - Spring - Allegro. Audio file credit to FreeMusicArchive.org</p>
+
+                    <p>And hey this website is free for yall to check the source code in the github repository if ya'll
+                        wanna check out the goofy ahh tricks I use to make these. I'm the creator of this website but of
+                        course this wouldn't be possible without the assistance of "clever Research and Troubleshooting
+                        tools" to help me efficiently learn how to actually make things work and fix the MANY unexpected
+                        problems I have to encounter along the way.</p>
+
+                    <p>By "clever Research and Troubleshooting tools" I bet you can pretty much guess what I meant by
+                        that. But I wouldnt wanna spend days reading documents of the programming language with
+                        technical terms % I've never heard of. Courses take time too to follow through and I only wanna
+                        join the one's I trust to actually be able to teach properly. One should never blatantly copy
+                        paste code too, I use these tools to literally learn how the code works and how to use it and I
+                        implement and integrate that to my website myself.</p>
+                </div>
             </div>
         </div>
     </main>
 </body>
+
+<audio id="MUSIC-COAST" loop>
+    <!-- John Harrison with the Wichita State University Chamber Players | Free Music Archive -->
+    <source src="./assets/Spring-Mvt-1-Allegro.mp3" type="audio/mp3">
+</audio>
 
 </html>

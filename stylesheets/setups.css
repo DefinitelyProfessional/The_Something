@@ -1,0 +1,133 @@
+/* FONT SETUP - oswald-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/oswald-v56-latin-regular.woff2') format('woff2');
+}
+/* FONT SETUP - oswald-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/oswald-v56-latin-700.woff2') format('woff2');
+}
+/* FONT SETUP - pt-sans-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'pt-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/pt-sans-v17-latin-regular.woff2') format('woff2');
+}
+/* FONT SETUP - pt-sans-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'pt-sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/pt-sans-v17-latin-700.woff2') format('woff2');
+}
+/* SVG GRAPHICS SETUP */
+.icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: currentColor; /* So you can use .icon { color: red } */
+    fill: none;           /* Most line icons like Lucide or Tabler don't use fill */
+    stroke-width: 2;
+    vertical-align: middle;
+}
+
+/* FORMATTING SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+html {
+  font-size: 62.5%;     /*for font management to set all rem values: 1 rem = 10px*/
+}
+body {
+    display: flex;
+    font-family: 'pt-sans', sans-serif;
+    font-weight: 400;
+    font-size: 2.1rem;  /* actually tweak global font sizes here */
+}
+header, div {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+main {
+    width: 100%;
+}
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+input {
+  position: relative;
+  transition: .3s ease-out;
+  overflow: hidden;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font: inherit;
+  text-align: left;
+  border: none;
+  border-radius: inherit;
+  padding: 0 2rem;
+}
+/* remove that 'spin-button' arrow default stuff */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* that opaque landing screen to make users click and trigger music */
+#LANDING-SCREEN {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 2;
+    cursor: pointer;
+
+    /* for transition property */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .5s ease-out, visibility .5s ease-out;
+}
+#LANDING-SCREEN.fade-out{
+    opacity: 0;
+    visibility: hidden;
+}
+/* for the i love the view button, gives smooth animation to the tab-contents to disappear */
+.contents {
+  transition: .3s ease-out;
+}
