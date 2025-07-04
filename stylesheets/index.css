@@ -1,12 +1,12 @@
 :root {
     /* Colors of elements */
-    --NAVBAR-texts: #fff;
-    --NAVBAR-bgcolor: #000;
+    --NAVBAR-texts: #e3e9e1;
+    --NAVBAR-bgcolor: #0f0f0f;
     --text-shadows: #303030;
     --tab-hover-background: #7070ff;
     --tab-hover-gradient: #70adad;
-    --active-background: #cc0052;
-    --active-gradient: #ff8820;
+    --active-background: #88c070;
+    --active-gradient: #7bb7a5;
     --footer-hover-background: #405DE6;
     --footer-hover-gradient: #833AB4;
     --tab-content-texts: #fff;
@@ -33,33 +33,37 @@
     border-bottom: 2px ridge var(--NAVBAR-texts);
 }
 /*. . . . . . . . . . HEADER */
-header div {
-    font-family: 'agdasima', sans-serif;
-    font-weight: 400;
+header div{
+    font-family: 'Oswald', sans-serif;
     flex-direction: row;
     justify-content: space-between;
 }
 .heading {
-    font-size: 4rem;
-    align-items: center;
-}
-.heading img {
-    width: 53px;
-    height: 53px;
-    border-radius: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 5rem;
 }
 .subheading {
     border-bottom: 4px double var(--NAVBAR-texts);
     padding-bottom: 8px;
     margin-bottom: 16px;
-    font-size: 2.3rem;
+}
+.subheading h5 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+#RIGBY {
+    border-radius: 100%;
+    align-self: center;
+    width: 150px;
+    height: 150px;
 }
 /*. . . . . . . . . . CONTENTS */
 #CONTENTS {
     height: 100%;
     justify-content: space-between;
 }
-.tab, footer a {
+.tab, footer a, #CONTENTS a {
     display: flex;
     position: relative;
     align-items: center;
@@ -67,13 +71,13 @@ header div {
     transition: .3s ease-out;
     padding: 4px 8px;
 }
-.tab:hover, #COOL:hover, #TRI-CALCULATE {
+.tab:hover, #COOL:hover, #CONTENTS a:hover {
     background-color: var(--tab-hover-background);
     box-shadow: 45px 0px 40px var(--tab-hover-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
     scale: 1.05;
 }
-.active, #TRI-CALCULATE:hover {
+.active {
     background-color: var(--active-background);
     box-shadow: 45px 0px 40px var(--active-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
@@ -107,10 +111,9 @@ footer a:hover {
     position: relative;
     transform: skewX(-40deg);
     left: -15rem;
-    background-color: var(--active-background);
-    box-shadow: 100px 0px 40px var(--active-gradient) inset;
-    border-right: 32px double var(--active-gradient);
-    border-bottom: 4px solid var(--active-gradient);
+    background-color: var(--NAVBAR-bgcolor);
+    border-right: 32px double var(--active-background);
+    border-bottom: 4px solid var(--active-background);
     margin-bottom: 16px;
 }
 .title h1 {
@@ -131,63 +134,11 @@ footer a:hover {
 }
 /*. . . . . . . . . . ARRIVAL PAGE . . . . . . . . . .*/
 #ARRIVAL {
-    background: #fff url('../assets/pictures/CoastingSunset.png') no-repeat fixed center center / cover;
-}
-#ARRIVAL .images {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: auto;
-    margin: 2rem 6%;
-}
-.images img {
-    height: auto;
-    width: auto;
+    background: #fff url('../assets/pictures/nature-arrival.png') no-repeat fixed center center / cover;
 }
 /*. . . . . . . . . . CREDIT PAGE . . . . . . . . . .*/
 #CREDITS {
-    background: #fff url('../assets/pictures/luv-it.png') no-repeat fixed center center / cover;
-}
-#UNBEATABLE {
-    position: relative;
-    padding: 0 8%;
-    top: -5rem;
-}
-/* work in progress */
-#TRIANGLESQ {
-    background: #fff url('../assets/pictures/pic3.png') no-repeat fixed center center / cover;
-}
-input::placeholder {
-    color: var(--active-background);
-}
-.inputs-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: var(--tab-content-texts);
-    font-family: 'agdasima', sans-serif;
-    font-size: 3rem;
-}
-.inputs-element {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: var(--active-background);
-    border-radius: 5rem;
-    margin: 0.5rem;
-    padding: 0.1rem;
-}
-#TRIANGLE-INPUT-BASE {
-    background-color: var(--active-gradient);
-}
-#TRIANGLE-INPUT-HEIGHT {
-    background-color: var(--active-gradient);
-}
-#TRI-CALCULATE {
-    transition: .3s ease-out;
-    border-radius: 2rem;
-    margin: 0rem 3rem;
-    padding: 1rem;
+    background: #fff url('../assets/pictures/nature-credits.png') no-repeat fixed center center / cover;
 }
 /* This is styling connected to asset-setups definitions */
 .topic .icon {
@@ -214,10 +165,6 @@ input::placeholder {
     }
     #MENU {
         display: flex;
-    }
-    .heading img {
-        width: 55px;
-        height: 55px;
     }
     .subheading {
         margin-bottom: 0;

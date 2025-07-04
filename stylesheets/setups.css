@@ -1,18 +1,18 @@
-/* FONT SETUP - agdasima-400 - latin */
+/* FONT SETUP - oswald-regular - latin */
 @font-face {
   font-display: swap;
-  font-family: 'agdasima';
+  font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/agdasima-v5-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/oswald-v56-latin-regular.woff2') format('woff2');
 }
-/* FONT SETUP - agdasima-700 - latin */
+/* FONT SETUP - oswald-700 - latin */
 @font-face {
   font-display: swap;
-  font-family: 'agdasima';
+  font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: url('../assets/fonts/agdasima-v5-latin-700.woff2') format('woff2');
+  src: url('../assets/fonts/oswald-v56-latin-700.woff2') format('woff2');
 }
 /* FONT SETUP - pt-sans-regular - latin */
 @font-face {

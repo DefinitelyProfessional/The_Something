@@ -1,5 +1,5 @@
 // make element variables
-let NAVBAR, CONTENT, tabButton, tabContent, coolView, tabContentAmount, inputBase, inputHeight, calcButton, answerP;
+let NAVBAR, CONTENT, tabButton, tabContent, coolView, tabContentAmount;
 document.addEventListener('DOMContentLoaded', () => {
     // Define element variables after everything is loaded
     NAVBAR = document.getElementById('NAVBAR');
@@ -7,21 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     contents = document.getElementsByClassName('contents'); // for the I love the view button
     tabButton = document.getElementsByClassName('tab');
     tabContent = document.getElementsByClassName('tab-content');
-    inputBase = document.getElementById('TRIANGLE-INPUT-BASE');
-    inputHeight = document.getElementById('TRIANGLE-INPUT-HEIGHT');
-    calcButton = document.getElementById('TRI-CALCULATE');
-    answerP = document.getElementById('ANSWER');
-
-    // THE ACTUAL CALCULATOR
-    calcButton.addEventListener('click', () => {
-        if (isNaN(inputBase.valueAsNumber) || isNaN(inputHeight.valueAsNumber))
-        {
-            answerP.innerText = 'you goof, ya gotta type in the numbers duh';
-            return;
-        }
-        let result = 0.5 * inputBase.valueAsNumber * inputHeight.valueAsNumber;
-        answerP.innerText = "psst the answer is " + result + " with whatever unit of measurement you're using !";
-    });
 
     // landing screen dissappears on click and triggers bg music
     let land_screen = document.getElementById("LANDING-SCREEN");
@@ -53,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < contentsAmount; i++) {
                 contents[i].style.opacity = '0.0';
             }
-            NAVBAR.style.opacity = '0.1';
+            NAVBAR.style.opacity = '0.2';
             NAVBAR.style.position = 'fixed';
             COOLVIEW.classList.add('active');
         }
