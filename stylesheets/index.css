@@ -1,5 +1,5 @@
 :root {
-    /* Colors of elements */
+    /* Colors of elements, an easy way to tweak colors quickly*/
     --NAVBAR-texts: #e3e9e1;
     --NAVBAR-bgcolor: #0f0f0f;
     --text-shadows: #303030;
@@ -71,7 +71,7 @@ header div{
     transition: .3s ease-out;
     padding: 4px 8px;
 }
-.tab:hover, #COOL:hover, #CONTENTS a:hover {
+.tab:hover, #COOL:hover {
     background-color: var(--tab-hover-background);
     box-shadow: 45px 0px 40px var(--tab-hover-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
@@ -91,7 +91,7 @@ header div{
     transition: .5s ease-out;
 }
 /*. . . . . . . . . . FOOTER */
-footer a:hover {
+footer a:hover, .tab-external-links:hover {
     background-color: var(--footer-hover-background);
     box-shadow: 45px 0px 40px var(--footer-hover-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
@@ -136,7 +136,7 @@ footer a:hover {
 #ARRIVAL {
     background: #fff url('../assets/pictures/nature-arrival.png') no-repeat fixed center center / cover;
 }
-/*. . . . . . . . . . CREDIT PAGE . . . . . . . . . .*/
+/*. . . . . . . . . . CREDIT PAGE  . . . . . . . . . .*/
 #CREDITS {
     background: #fff url('../assets/pictures/nature-credits.png') no-repeat fixed center center / cover;
 }

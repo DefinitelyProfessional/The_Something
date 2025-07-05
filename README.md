@@ -1,4 +1,7 @@
-# tugas revoU king bikin kalkulator cikk
+# Something SQ
 
-Salam sejahtara. Kini kupersembahkan sekilas website sederhana :
-[Revo SQ](https://revou-fundamental-course.github.io/16-jun-25-StephenSQ/ "Revo SQ")
+The personal website, where [something][1] exists . . .
+
+<img style="aspect-ratio: 1; height: 25rem;" src="./assets/pictures/rigbycat-rigby.gif" title="RIGBY the cat."></img>
+
+[1]: https://stephensq.github.io/The_Something/ "Something SQ"
