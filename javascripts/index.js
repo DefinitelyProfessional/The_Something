@@ -1,12 +1,12 @@
-// make element variables
+// MAKE GLOBAL ELEMENT VARIABLES
 let NAVBAR, CONTENT, tabButton, tabContent, coolView, tabContentAmount;
 document.addEventListener('DOMContentLoaded', () => {
-    // Define element variables after everything is loaded
+    // Define element variables AFTER everything is loaded, otherwise shi breaks
     NAVBAR = document.getElementById('NAVBAR');
-    COOLVIEW = document.getElementById('COOL');
-    contents = document.getElementsByClassName('contents'); // for the I love the view button
     tabButton = document.getElementsByClassName('tab');
     tabContent = document.getElementsByClassName('tab-content');
+    COOLVIEW = document.getElementById('COOL'); // this is the COOL I love the view button
+    contents = document.getElementsByClassName('contents'); // for the I love the view button
 
     // landing screen dissappears on click and triggers bg music
     let land_screen = document.getElementById("LANDING-SCREEN");
@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // trigger the resize event so the code inside the EventListener above is executed
     window.dispatchEvent(new Event('resize'));
 
-    // svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository, not relative to its file location
+    // svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository,
+    // not relative to its file location. Also avoid injecting several classes with the same file. THATS INEFFICIENT 
     injectSVG('.icon-house', './assets/graphics/house.svg');
     injectSVG('.icon-credit', './assets/graphics/credit.svg');
     injectSVG('.icon-calc', './assets/graphics/calculator.svg');
@@ -73,37 +74,43 @@ document.addEventListener('DOMContentLoaded', () => {
     injectSVG('.icon-camera', './assets/graphics/camera.svg');
 }, { once: true }); // once: true can be used for any EventListener that only requires to be called once.
 
+
+// END OF addEventListeners AND global variable definitions . . . . . . . . THIS IS WHERE FUNCTION DEFINITIONS START
+
+
 // svg graphics injection to elements
-const svgCache = {};
 async function injectSVG(targetSelector, filePath) {
+    // when an async function is called, it runs an instance of itself, 
+    // while the script continues without having to wait for this instance to finish
     try {
-        // ... so what does svgCache store when svgCache[filePath] ?
-        let svgText = svgCache[filePath]; // this line's purpose seem to just be so if (!svgText) works as intended ?
-        // if svgText is NOT empty... can I just use !filePath ?
-        if (!svgText) {
-            // ok so await waits for fetch to finish fetching ?
-            // then what data type does fetch return and gets stored in res ? the actual svg graphics ?
-            const res = await fetch(filePath);
-            // .ok checks if fetch returns resolved(ok) or rejected(not ok) ? isnt res the contents of an svg now ?
-            if (!res.ok) throw new Error(`Failed to load ${filePath}`);
-            // so what is the data type and value of res.text ? finally the actual svg ?
-            svgText = await res.text();
-            svgCache[filePath] = svgText;// .. this line seems obsolete and pointless ?
-        }
-        // inject svgs for each element with the target
+        // fetch takes time to return the contents of the filepath
+        const fetchResponse = await fetch(filePath);
+        // await pauses this function's execution until fetch resolves, 
+        // but other code (and other async calls) can continue running in parallel
+
+        // // fetchResponse is a Response object — it holds the result of the fetch, 
+        // including status codes and the actual file content (accessible via .text() or .json())
+        if (!fetchResponse.ok) throw new Error(`Failed to load ${filePath}`);
+
+        // .text() is a method that returns a Promise which resolves to the response body as a string, so we use await again here 
+        let svgText = await fetchResponse.text();
+        // it takes time to read the full response body, so .text() uses a Promise to handle that delay asynchronously
+
+        // by now, things have successfully fetched the SVG contents and only then it starts injecting the SVG
         const targets = document.querySelectorAll(targetSelector);
         targets.forEach(el => {
-            // ok so this is where the innerHTML becomes the literal svg ?
             el.innerHTML = svgText;
         });
     }
-    // err is just a placeholder variable for catch to work ?
-    catch (err) {
-        console.error(err);
+    catch (errorsIfItExists) {
+        console.error(errorsIfItExists);
     }
+    // Each async function call creates its own independent execution. 
+    // It can pause itself using await, but the rest of the script — and other async calls — continue running in parallel.
 }
 
-// a function for NAVBAR's tab switching buttons. NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
+// a function for NAVBAR's tab switching buttons. 
+// NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
 let prevButton, prevContent;
 function switchTab(_button, _content) {
     // deactivate previous stuff
