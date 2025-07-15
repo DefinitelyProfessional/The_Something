@@ -1,78 +1,70 @@
-// MAKE GLOBAL ELEMENT VARIABLES
-let NAVBAR, CONTENT, tabButton, tabContent, coolView, tabContentAmount;
-document.addEventListener('DOMContentLoaded', () => {
-    // Define element variables AFTER everything is loaded, otherwise shi breaks
-    NAVBAR = document.getElementById('NAVBAR');
-    tabButton = document.getElementsByClassName('tab');
-    tabContent = document.getElementsByClassName('tab-content');
-    COOLVIEW = document.getElementById('COOL'); // this is the COOL I love the view button
-    contents = document.getElementsByClassName('contents'); // for the I love the view button
+// USING DEFER IN THE HTML SCRIPT TAG EFFICIENTLY PARSES THIS JS FILE ONLY
+// AFTER THE ENTIRE HTML CONTENTS COMPLETELY PARSED AND LOADED i.e. EXISTS
+let NAVBAR = document.getElementById('NAVBAR');
+let tabButton = document.getElementsByClassName('tab');
+let tabContent = document.getElementsByClassName('tab-content');
+let COOLVIEW = document.getElementById('COOL'); // this is the COOL I love the view button
+let contents = document.getElementsByClassName('contents'); // for the I love the view button
 
-    // landing screen dissappears on click and triggers bg music
-    let land_screen = document.getElementById("LANDING-SCREEN");
-    land_screen.addEventListener("click", () => {
-        document.getElementById("MUSIC-COAST").play();
+// landing screen dissappears on click and triggers bg music
+let land_screen = document.getElementById("LANDING-SCREEN");
+land_screen.addEventListener("click", () => {
+    document.getElementById("MUSIC-COAST").play();
 
-        land_screen.classList.add("fade-out");
-        // display none, perfectly timed with the CSS transition
-        setTimeout(() => {
-            land_screen.style.display = "none";
-        }, 500); // CSS transition 0.5s
-    }, { once: true }); // once: true will delete the event listener after it's triggered once
+    land_screen.classList.add("fade-out");
+    // display none, perfectly timed with the CSS transition
+    setTimeout(() => {
+        land_screen.style.display = "none";
+    }, 500); // CSS transition 0.5s
+}, { once: true }); // once: true will delete the event listener after it's triggered once
 
+// Add active EventListeners for the tab switching mechanism
+let tabButtonAmount = tabButton.length;
+for (let i = 0; i < tabButtonAmount; i++) {
+    // the key is that tabButton and tabContent elements are in the same order in the html n css files
+    tabButton[i].addEventListener('click', () => { switchTab(tabButton[i], tabContent[i]) });
+}
 
-    // Add active EventListeners for the tab switching mechanism
-    let tabButtonAmount = tabButton.length;
-    for (let i = 0; i < tabButtonAmount; i++) {
-        // the key is that tabButton and tabContent elements are in the same order in the html n css files
-        tabButton[i].addEventListener('click', () => { switchTab(tabButton[i], tabContent[i]) });
+// The button for the I LOVE THE VIEW button lmao
+let toggleCOOLVIEW = false;
+let contentsAmount = contents.length;
+COOLVIEW.addEventListener('click', () => {
+    toggleCOOLVIEW = !toggleCOOLVIEW;
+    if (toggleCOOLVIEW) {
+        for (let i = 0; i < contentsAmount; i++) {
+            contents[i].style.opacity = '0.0';
+        }
+        NAVBAR.style.opacity = '0.2';
+        NAVBAR.style.position = 'fixed';
+        COOLVIEW.classList.add('active');
     }
-
-
-    // The button for the I LOVE THE VIEW button lmao
-    let toggleCOOLVIEW = false;
-    let contentsAmount = contents.length;
-    COOLVIEW.addEventListener('click', () => {
-        toggleCOOLVIEW = !toggleCOOLVIEW;
-        if (toggleCOOLVIEW) {
-            for (let i = 0; i < contentsAmount; i++) {
-                contents[i].style.opacity = '0.0';
-            }
-            NAVBAR.style.opacity = '0.2';
-            NAVBAR.style.position = 'fixed';
-            COOLVIEW.classList.add('active');
+    else {
+        for (let i = 0; i < contentsAmount; i++) {
+            contents[i].style.opacity = '1.0';
         }
-        else {
-            for (let i = 0; i < contentsAmount; i++) {
-                contents[i].style.opacity = '1.0';
-            }
-            NAVBAR.style.opacity = '1.0';
-            NAVBAR.style.position = 'sticky';
-            COOLVIEW.classList.remove('active');
-        }
-    });
-    // Make the Arrival tab as initial tab with switchTab
-    tabButton[0].click()
+        NAVBAR.style.opacity = '1.0';
+        NAVBAR.style.position = 'sticky';
+        COOLVIEW.classList.remove('active');
+    }
+});
 
-    // Controls the NAVBAR's height
-    window.addEventListener('resize', () => {
-            NAVBAR.style.height = `${window.innerHeight}px`;
-    });
+// Controls the NAVBAR's height
+window.addEventListener('resize', () => {
+        NAVBAR.style.height = `${window.innerHeight}px`;
+});
+// trigger the resize event so the code inside the EventListener above is executed
+window.dispatchEvent(new Event('resize'));
 
-    // trigger the resize event so the code inside the EventListener above is executed
-    window.dispatchEvent(new Event('resize'));
-
-    // svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository,
-    // not relative to its file location. Also avoid injecting several classes with the same file. THATS INEFFICIENT 
-    injectSVG('.icon-house', './assets/graphics/house.svg');
-    injectSVG('.icon-credit', './assets/graphics/credit.svg');
-    injectSVG('.icon-calc', './assets/graphics/calculator.svg');
-    injectSVG('.icon-triangle', './assets/graphics/triangle.svg');
-    injectSVG('.icon-github', './assets/graphics/github.svg');
-    injectSVG('.icon-instagram', './assets/graphics/instagram.svg');
-    injectSVG('.icon-user', './assets/graphics/user.svg');
-    injectSVG('.icon-camera', './assets/graphics/camera.svg');
-}, { once: true }); // once: true can be used for any EventListener that only requires to be called once.
+// svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository,
+// not relative to its file location. Also avoid injecting several classes with the same file. THATS INEFFICIENT 
+injectSVG('.icon-house', './assets/graphics/house.svg');
+injectSVG('.icon-credit', './assets/graphics/credit.svg');
+injectSVG('.icon-calc', './assets/graphics/calculator.svg');
+injectSVG('.icon-triangle', './assets/graphics/triangle.svg');
+injectSVG('.icon-github', './assets/graphics/github.svg');
+injectSVG('.icon-instagram', './assets/graphics/instagram.svg');
+injectSVG('.icon-user', './assets/graphics/user.svg');
+injectSVG('.icon-camera', './assets/graphics/camera.svg');
 
 
 // END OF addEventListeners AND global variable definitions . . . . . . . . THIS IS WHERE FUNCTION DEFINITIONS START
@@ -111,10 +103,10 @@ async function injectSVG(targetSelector, filePath) {
 
 // a function for NAVBAR's tab switching buttons. 
 // NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
-let prevButton, prevContent;
+let prevButton = null, prevContent = null;
 function switchTab(_button, _content) {
     // deactivate previous stuff
-    if (prevButton != undefined) {
+    if (prevButton) {
         prevButton.classList.remove('active');
         prevContent.style.display = 'none';
     }
@@ -125,3 +117,8 @@ function switchTab(_button, _content) {
     prevButton = _button;
     prevContent = _content;
 }
+
+// Finally, make the Arrival tab as initial tab with switchTab,
+// due to new method with defer in html and the way JS parses let variables,
+// the switchTab function call needs all let variables parsed top bottom beforehand.
+tabButton[0].click()
