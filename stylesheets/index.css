@@ -134,11 +134,11 @@ footer a:hover, .tab-external-links:hover {
 }
 /*. . . . . . . . . . ARRIVAL PAGE . . . . . . . . . .*/
 #ARRIVAL {
-    background: #fff url('../assets/pictures/nature-arrival.png') no-repeat fixed center center / cover;
+    background: var(--text-shadows) url('../assets/pictures/nature-arrival.png') no-repeat fixed center center / cover;
 }
 /*. . . . . . . . . . CREDIT PAGE  . . . . . . . . . .*/
 #CREDITS {
-    background: #fff url('../assets/pictures/nature-credits.png') no-repeat fixed center center / cover;
+    background: var(--text-shadows) url('../assets/pictures/nature-credits.png') no-repeat fixed center center / cover;
 }
 /* This is styling connected to asset-setups definitions */
 .topic .icon {

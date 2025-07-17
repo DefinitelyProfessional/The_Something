@@ -1,5 +1,8 @@
-// USING DEFER IN THE HTML SCRIPT TAG EFFICIENTLY PARSES THIS JS FILE ONLY
-// AFTER THE ENTIRE HTML CONTENTS COMPLETELY PARSED AND LOADED i.e. EXISTS
+// Here includes all functions and processes that the index file uses, meant to be reusable
+
+
+// USING DEFER IN THE HTML SCRIPT TAG EFFICIENTLY PARSES THIS JS FILE AND ONLY
+// EXECUTES THIS AFTER THE ENTIRE HTML CONTENTS COMPLETELY PARSED i.e. READY !
 let NAVBAR = document.getElementById('NAVBAR');
 let tabButton = document.getElementsByClassName('tab');
 let tabContent = document.getElementsByClassName('tab-content');
@@ -55,51 +58,9 @@ window.addEventListener('resize', () => {
 // trigger the resize event so the code inside the EventListener above is executed
 window.dispatchEvent(new Event('resize'));
 
-// svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository,
-// not relative to its file location. Also avoid injecting several classes with the same file. THATS INEFFICIENT 
-injectSVG('.icon-house', './assets/graphics/house.svg');
-injectSVG('.icon-credit', './assets/graphics/credit.svg');
-injectSVG('.icon-calc', './assets/graphics/calculator.svg');
-injectSVG('.icon-triangle', './assets/graphics/triangle.svg');
-injectSVG('.icon-github', './assets/graphics/github.svg');
-injectSVG('.icon-instagram', './assets/graphics/instagram.svg');
-injectSVG('.icon-user', './assets/graphics/user.svg');
-injectSVG('.icon-camera', './assets/graphics/camera.svg');
-
 
 // END OF addEventListeners AND global variable definitions . . . . . . . . THIS IS WHERE FUNCTION DEFINITIONS START
 
-
-// svg graphics injection to elements
-async function injectSVG(targetSelector, filePath) {
-    // when an async function is called, it runs an instance of itself, 
-    // while the script continues without having to wait for this instance to finish
-    try {
-        // fetch takes time to return the contents of the filepath
-        const fetchResponse = await fetch(filePath);
-        // await pauses this function's execution until fetch resolves, 
-        // but other code (and other async calls) can continue running in parallel
-
-        // // fetchResponse is a Response object — it holds the result of the fetch, 
-        // including status codes and the actual file content (accessible via .text() or .json())
-        if (!fetchResponse.ok) throw new Error(`Failed to load ${filePath}`);
-
-        // .text() is a method that returns a Promise which resolves to the response body as a string, so we use await again here 
-        let svgText = await fetchResponse.text();
-        // it takes time to read the full response body, so .text() uses a Promise to handle that delay asynchronously
-
-        // by now, things have successfully fetched the SVG contents and only then it starts injecting the SVG
-        const targets = document.querySelectorAll(targetSelector);
-        targets.forEach(el => {
-            el.innerHTML = svgText;
-        });
-    }
-    catch (errorsIfItExists) {
-        console.error(errorsIfItExists);
-    }
-    // Each async function call creates its own independent execution. 
-    // It can pause itself using await, but the rest of the script — and other async calls — continue running in parallel.
-}
 
 // a function for NAVBAR's tab switching buttons. 
 // NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
